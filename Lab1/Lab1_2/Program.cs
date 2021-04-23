@@ -6,18 +6,21 @@ namespace Lab1
     {
         static void Main(string[] args)
         {
-            int[] arr = { 1, 3, 5, 7, 9 };
+            int[] arr = new int[9];
+            Random rand = new Random();
+            for (int i = 0; i < arr.Length; i++)
+            arr[i] = rand.Next(0, 9);
 
-            int a;
+            int perem;
             for (int i = 0; i < arr.Length - 1; i++)
             {
                 for (int j = i + 1; j < arr.Length; j++)
                 {
                     if (arr[i] < arr[j])
                     {
-                        a = arr[i];
+                        perem = arr[i];
                         arr[i] = arr[j];
-                        arr[j] = a;
+                        arr[j] = perem;
                     }
                 }
             }

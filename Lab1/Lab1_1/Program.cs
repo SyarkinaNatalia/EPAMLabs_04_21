@@ -6,39 +6,35 @@ namespace Lab1
     {
         static void Main(string[] args)
         {
-            double a;
-            double b;
-            double total;
+            double variabl_a;
+            double variabl_b;
+            double total = 0;
             char oper;
             Console.WriteLine("Введите первое число");
-            a = Convert.ToDouble(Console.ReadLine());
+            variabl_a = Convert.ToDouble(Console.ReadLine());
             Console.WriteLine("Введите оператор");
             oper = Convert.ToChar(Console.ReadLine());
             Console.WriteLine("Введите второе число");
-            b = Convert.ToDouble(Console.ReadLine());
-            if (oper == '+')
+            variabl_b = Convert.ToDouble(Console.ReadLine());
+            switch (oper)
             {
-                total = a + b;
-                Console.WriteLine("Сумма чисел равна " + total);
-            }
-            else if (oper == '-')
-            {
-                total = a - b;
-                Console.WriteLine("Разность чисел равна " + total);
+                case '+':
+                    total = variabl_a + variabl_b;
+                    break;
 
-            }
-            else if (oper == '*')
-            {
-                total = a * b;
-                Console.WriteLine("Произведение чисел равно " + total);
+                case '-':
+                    total = variabl_a - variabl_b;
+                    break;
+                case '*':
+                    total = variabl_a * variabl_b;
+                    break;
+                case '/':
 
+                    total = variabl_a / variabl_b;
+                    break;
             }
-            else if (oper == '/')
-            {
-                total = a / b;
-                Console.WriteLine("Частное чисел равно " + total);
-
-            }
+            Console.WriteLine("Результат = " + total);
+            Console.ReadLine();
         }
     }
 }
